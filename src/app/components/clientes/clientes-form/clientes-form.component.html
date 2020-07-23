@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text" style="font-size: 20px;">
+                  <i class="fas fa-id-badge"></i>
+                </div>
+              </div>
+              <input
+                [(ngModel)]="cliente.nombre"
+                name="nombre"
+                type="text"
+                class="form-control"
+                placeholder="Nombre"
+                autofocus
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text" style="font-size: 20px;">
+                  <i class="far fa-id-badge"></i>
+                </div>
+              </div>
+              <input
+                [(ngModel)]="cliente.apellido"
+                name="apellido"
+                type="text"
+                class="form-control"
+                placeholder="Apellido"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text" style="font-size: 15px;">
+                  <i class="far fa-id-card"></i>
+                </div>
+              </div>
+              <input
+                [(ngModel)]="cliente.cedula"
+                name="cedula"
+                type="text"
+                class="form-control"
+                placeholder="Cédula"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text" style="font-size: 18px;">
+                  <i class="fas fa-phone"></i>
+                </div>
+              </div>
+              <input
+                [(ngModel)]="cliente.telefono"
+                name="telefono"
+                type="text"
+                class="form-control"
+                placeholder="Teléfono"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text" style="font-size: 16px;">
+                  <i class="fas fa-city"></i>
+                </div>
+              </div>
+              <input
+                [(ngModel)]="cliente.ciudad"
+                name="ciudad"
+                type="text"
+                class="form-control"
+                placeholder="Ciudad"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text" style="font-size: 18px;">
+                  <i class="fas fa-map-marked-alt"></i>
+                </div>
+              </div>
+              <input
+                [(ngModel)]="cliente.direccion"
+                name="direccion"
+                type="text"
+                class="form-control"
+                placeholder="Dirección"
+              />
+            </div>
+          </div>
+          <button class="btn btn-success btn-block" (click)="edit ? updateCliente() : saveNewCliente()">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card border-success text-center">
+      <div class="card-header"><h4>Cliente</h4></div>
+      <div class="card card-body text-center">
+        <img [src]="" />
+
+        <i class="fas fa-user-circle fa-8x mb-3"></i>
+        <p>Nombre Completo</p>
+        <p>{{ cliente.nombre }} {{ cliente.apellido }}</p>
+        <p>Cédula: {{ cliente.cedula }}</p>
+        <p>Teléfono: {{ cliente.telefono }}</p>
+        <p>Ciudad: {{ cliente.ciudad }}</p>
+        <p>Dirección: {{ cliente.direccion }}</p>
+      </div>
+    </div>
+  </div>
+</div>
