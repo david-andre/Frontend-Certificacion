@@ -1,0 +1,108 @@
+<app-navigation></app-navigation>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 offset-md-2">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" style="font-size: 20px;">
+                    <i class="fas fa-id-badge"></i>
+                  </div>
+                </div>
+                <input
+                  [(ngModel)]="empresa.nombre"
+                  name="nombre"
+                  type="text"
+                  class="form-control"
+                  placeholder="Nombre"
+                  autofocus
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" style="font-size: 18px;">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                </div>
+                <input
+                  [(ngModel)]="empresa.telefono"
+                  name="telefono"
+                  type="text"
+                  class="form-control"
+                  placeholder="Teléfono"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" style="font-size: 16px;">
+                    <i class="fas fa-city"></i>
+                  </div>
+                </div>
+                <input
+                  [(ngModel)]="empresa.ciudad"
+                  name="ciudad"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ciudad"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" style="font-size: 18px;">
+                    <i class="fas fa-map-marked-alt"></i>
+                  </div>
+                </div>
+                <input
+                  [(ngModel)]="empresa.direccion"
+                  name="direccion"
+                  type="text"
+                  class="form-control"
+                  placeholder="Dirección"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <button
+              class="btn btn-success btn-block"
+              (click)="edit ? updateEmpresa() : saveNewEmpresa()"
+            >
+              Guardar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card border-success text-center">
+        <div class="card-header"><h4>Empresa</h4></div>
+        <div class="card card-body text-center">
+          <i class="fas fa-store fa-8x mb-3"></i>
+          <label>Nombre</label>
+          <label class="font-weight-bold">{{ empresa.nombre }}</label>
+          <label
+            >Teléfono: <b>{{ empresa.telefono }}</b></label
+          >
+          <label
+            >Ciudad: <b>{{ empresa.ciudad }}</b></label
+          >
+          <label
+            >Dirección: <b>{{ empresa.direccion }}</b></label
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

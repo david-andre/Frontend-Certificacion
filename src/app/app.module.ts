@@ -11,6 +11,13 @@ import { ClientesListComponent } from './components/clientes/clientes-list/clien
 
 import { ClientesService } from './services/clientes.service';
 import { from } from 'rxjs';
+import { EmpresasListComponent } from './components/empresas/empresas-list/empresas-list.component';
+import { EmpresasFormComponent } from './components/empresas/empresas-form/empresas-form.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { LoginRegisterComponent } from './components/login-register/login-register.component';
+import { ServiciosListComponent } from './components/servicios/servicios-list/servicios-list.component';
+import { ServiciosAddComponent } from './components/servicios/servicios-add/servicios-add.component';
+import { ServiciosEditComponent } from './components/servicios/servicios-edit/servicios-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +25,13 @@ import { from } from 'rxjs';
     NavigationComponent,
     ClientesFormComponent,
     ClientesListComponent,
+    EmpresasListComponent,
+    EmpresasFormComponent,
+    MainPageComponent,
+    LoginRegisterComponent,
+    ServiciosListComponent,
+    ServiciosAddComponent,
+    ServiciosEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ClientesService],
