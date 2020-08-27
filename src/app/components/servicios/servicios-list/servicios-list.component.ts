@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from '../../../services/servicios.service';
-import { EmpresasService } from '../../../services/empresas.service';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-servicios-list',
@@ -11,12 +10,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ServiciosListComponent implements OnInit {
   servicios: any = [];
-  empresa: any = [];
+  detalles: any = [];
   idempresa = this.activatedRoute.snapshot.params.id;
   constructor(
     private serviciosService: ServiciosService,
-    private empresasService: EmpresasService,
-    private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -27,6 +24,8 @@ export class ServiciosListComponent implements OnInit {
       this.getServicios();
     } else {
       this.getAllServicios();
+      this.getDetalles();
+      console.log(this.detalles);
     }
   }
 
@@ -92,5 +91,28 @@ export class ServiciosListComponent implements OnInit {
         );
       }
     });
+  }
+
+  addServicio(id: string) {
+    this.detalles.push(id);
+    sessionStorage.setItem('detalles', JSON.stringify(this.detalles));
+    console.log(this.detalles);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Servicio Añadido',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+
+  getDetalles() {
+    if (sessionStorage.detalles == null) {
+      this.detalles = [];
+    } else {
+      var array = sessionStorage.getItem('detalles');
+      array = JSON.parse(array);
+      this.detalles = array;
+    }
   }
 }

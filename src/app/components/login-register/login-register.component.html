@@ -1,149 +1,111 @@
-<div style="height: 100vh;">
-  <section class="pricing py-4 h-100">
-    <div class="container h-100">
-      <div class="row">
-        <!-- Free Tier -->
-        <div class="col-lg-5">
-          <div class="card mb-5 mb-lg-0 h-lg-75">
-            <div class="card-body mt-4">
-              <h5 class="card-title text-center">Regístrate</h5>
-              <hr />
-              <form class="form-signin">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="inputUserame"
-                    class="form-control"
-                    placeholder="Usuario"
-                    required
-                    autofocus
-                    autocomplete="off"
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="inputEmail"
-                    class="form-control"
-                    placeholder="Correo Electrónico"
-                    required
-                    autocomplete="off"
-                  />
-                </div>
-
-                <hr />
-
-                <div class="form-group">
-                  <input
-                    type="password"
-                    id="inputPassword"
-                    class="form-control"
-                    placeholder="Contraseña"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="password"
-                    id="inputConfirmPassword"
-                    class="form-control"
-                    required
-                  />
-                  <small id="emailHelp" class="form-text text-muted ml-2"
-                    >Confirma tu contraseña</small
-                  >
-                </div>
-
-                <button
-                  class="btn btn-lg btn-success btn-block text-uppercase"
-                  type="submit"
-                >
-                  Registrate
-                </button>
-                <hr class="my-4" />
-                <button
-                  class="btn btn-lg btn-google btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-google mr-2"></i> Sign up with Google
-                </button>
-                <button
-                  class="btn btn-lg btn-facebook btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook
-                </button>
-              </form>
+<body>
+  <header>
+    <!-- Header Start -->
+    <div class="header-area">
+      <div class="main-header header-sticky">
+        <div class="container-fluid">
+          <div class="menu-wrapper">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="index.html"
+                ><img src="assets/img/logo/logo.png" alt=""
+              /></a>
+            </div>
+            <!-- Main-menu -->
+            <div class="main-menu d-none d-lg-block">
+              <nav>
+                <ul id="navigation">
+                  <li class="hot">
+                    <a
+                      class="nav-link"
+                      routerLink="/register"
+                      routerLinkActive="active"
+                      ><i class="fas fa-user-circle mr-1"></i
+                      ><label>Iniciar Sesión</label></a
+                    >
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
-        </div>
-        <div class="col-offset-2 col-lg-2"></div>
-        <!-- Plus Tier -->
-        <div class="col-lg-5">
-          <div class="card mb-5 mb-lg-0">
-            <div class="card-body mt-4">
-              <h5 class="card-title text-center">Iniciar Sesión</h5>
-              <hr />
-              <form class="form-signin">
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="inputEmail"
-                    class="form-control"
-                    placeholder="Correo Electrónico"
-                    required
-                    autofocus
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="password"
-                    id="inputPassword"
-                    class="form-control"
-                    placeholder="Contraseña"
-                    required
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="custom-control custom-checkbox mb-3">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="customCheck1"
-                  />
-                  <label class="custom-control-label" for="customCheck1"
-                    >Recordar Contraseña</label
-                  >
-                </div>
-                <a
-                  class="btn btn-lg btn-success btn-block text-uppercase"
-                  type="submit"
-                  routerLink="/clientes"
-                >
-                  Iniciar Sesión
-                </a>
-                <hr class="my-4" />
-                <button
-                  class="btn btn-lg btn-google btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-google mr-2"></i> Sign in with Google
-                </button>
-                <button
-                  class="btn btn-lg btn-facebook btn-block text-uppercase"
-                  type="submit"
-                >
-                  <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
-                </button>
-              </form>
-            </div>
+          <!-- Mobile Menu -->
+          <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+    <!-- Header End -->
+  </header>
+
+  <main>
+    <!-- Hero Area End-->
+    <!--================login_part Area =================-->
+    <section class="login_part p-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6">
+            <div class="login_part_text text-center">
+              <div class="login_part_text_iner">
+                <h2>New to our Shop?</h2>
+                <p>
+                  There are advances being made in science and technology
+                  everyday, and a good example of this is the
+                </p>
+                <a href="#" class="btn_3">Create an Account</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="login_part_form">
+              <div class="login_part_form_iner">
+                <h3>
+                  Welcome Back ! <br />
+                  Please Sign in now
+                </h3>
+                <form
+                  class="row contact_form"
+                  action="#"
+                  method="post"
+                  novalidate="novalidate"
+                >
+                  <div class="col-md-12 form-group p_star">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      value=""
+                      placeholder="Username"
+                    />
+                  </div>
+                  <div class="col-md-12 form-group p_star">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      value=""
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <div class="creat_account d-flex align-items-center">
+                      <input type="checkbox" id="f-option" name="selector" />
+                      <label for="f-option">Remember me</label>
+                    </div>
+                    <button (click)="Toast()" class="btn_3">
+                      log in
+                    </button>
+                    <a class="lost_pass" href="#">forget password?</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================login_part end =================-->
+  </main>
+</body>

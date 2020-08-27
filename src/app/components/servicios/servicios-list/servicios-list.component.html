@@ -26,9 +26,13 @@
           </div>
         </div>
         <div class="card-body">
+          <p *ngIf="!idempresa">
+            <strong class="font-weight-bold">Empresa: </strong>
+            {{ servicio.Empresa.nombre }}
+          </p>
           <p>
             <strong class="font-weight-bold">Costo: </strong>
-            {{ servicio.costo }}
+            {{ servicio.costo | currency }}
           </p>
           <p>
             <strong class="font-weight-bold">Descripción: </strong
@@ -45,6 +49,7 @@
           <ng-template #elseBlock>
             <a
               class="btn btn-info btn-block text-white"
+              (click)="addServicio(servicio.idservicio)"
               ><i class="fas fa-shopping-bag fa-2x mr-2"></i>Pídelo ahora</a
             >
           </ng-template>

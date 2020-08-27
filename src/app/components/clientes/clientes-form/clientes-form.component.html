@@ -1,146 +1,128 @@
-<app-navigation></app-navigation>
-<div class="container p-4">
-  <div class="row">
-    <div class="col-md-4 offset-md-2">
-      <div class="card">
-        <div class="card-body">
-          <form>
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" style="font-size: 20px;">
-                    <i class="fas fa-id-badge"></i>
+<div style="height: 100vh">
+  <app-navigation></app-navigation>
+  <div class="bg" style="height: 82vh">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-4 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="form-group input-group-icon">
+                  <div class="icon">
+                    <i class="fas fa-id-badge" aria-hidden="true"></i>
                   </div>
+                  <input
+                    [(ngModel)]="cliente.nombre"
+                    name="nombre"
+                    type="text"
+                    class="single-input"
+                    placeholder="Nombre"
+                    autofocus
+                    autocomplete="off"
+                  />
                 </div>
-                <input
-                  [(ngModel)]="cliente.nombre"
-                  name="nombre"
-                  type="text"
-                  class="form-control"
-                  placeholder="Nombre"
-                  autofocus
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" style="font-size: 20px;">
-                    <i class="far fa-id-badge"></i>
+                <div class="form-group input-group-icon">
+                  <div class="icon">
+                    <i class="far fa-id-badge" aria-hidden="true"></i>
                   </div>
+                  <input
+                    [(ngModel)]="cliente.apellido"
+                    name="apellido"
+                    type="text"
+                    class="single-input"
+                    placeholder="Apellido"
+                    autocomplete="off"
+                  />
                 </div>
-                <input
-                  [(ngModel)]="cliente.apellido"
-                  name="apellido"
-                  type="text"
-                  class="form-control"
-                  placeholder="Apellido"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" style="font-size: 15px;">
-                    <i class="far fa-id-card"></i>
+                <div class="form-group input-group-icon">
+                  <div class="icon">
+                    <i class="far fa-id-card" aria-hidden="true"></i>
                   </div>
+                  <input
+                    [(ngModel)]="cliente.cedula"
+                    name="cedula"
+                    type="number"
+                    class="single-input"
+                    placeholder="Cédula"
+                    autocomplete="off"
+                  />
                 </div>
-                <input
-                  [(ngModel)]="cliente.cedula"
-                  name="cedula"
-                  type="text"
-                  class="form-control"
-                  placeholder="Cédula"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" style="font-size: 18px;">
-                    <i class="fas fa-phone"></i>
+                <div class="form-group input-group-icon">
+                  <div class="icon">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
                   </div>
+                  <input
+                    [(ngModel)]="cliente.telefono"
+                    name="telefono"
+                    type="text"
+                    class="single-input"
+                    placeholder="Teléfono"
+                    autocomplete="off"
+                  />
                 </div>
-                <input
-                  [(ngModel)]="cliente.telefono"
-                  name="telefono"
-                  type="text"
-                  class="form-control"
-                  placeholder="Teléfono"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" style="font-size: 16px;">
-                    <i class="fas fa-city"></i>
+                <div class="form-group input-group-icon">
+                  <div class="icon">
+                    <i class="fas fa-city" aria-hidden="true"></i>
                   </div>
+                  <input
+                    [(ngModel)]="cliente.ciudad"
+                    name="ciudad"
+                    type="text"
+                    class="single-input"
+                    placeholder="Ciudad"
+                    autocomplete="off"
+                  />
                 </div>
-                <input
-                  [(ngModel)]="cliente.ciudad"
-                  name="ciudad"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ciudad"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text" style="font-size: 18px;">
-                    <i class="fas fa-map-marked-alt"></i>
+                <div class="form-group input-group-icon">
+                  <div class="icon">
+                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                   </div>
+                  <input
+                    [(ngModel)]="cliente.direccion"
+                    name="direccion"
+                    type="text"
+                    class="single-input"
+                    placeholder="Dirección"
+                    autocomplete="off"
+                    required
+                  />
                 </div>
-                <input
-                  [(ngModel)]="cliente.direccion"
-                  name="direccion"
-                  type="text"
-                  class="form-control"
-                  placeholder="Dirección"
-                  autocomplete="off"
-                  required
-                />
-              </div>
+                <button
+                  class="btn btn-danger btn-block"
+                  (click)="edit ? updateCliente() : saveNewCliente()"
+                >
+                  Guardar
+                </button>
+              </form>
             </div>
-            <button
-              class="btn btn-success btn-block"
-              (click)="edit ? updateCliente() : saveNewCliente()"
-            >
-              Guardar
-            </button>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card border-success text-center">
-        <div class="card-header"><h4>Cliente</h4></div>
-        <div class="card card-body text-center">
-          <i class="fas fa-user-circle fa-8x mb-3"></i>
-          <label>Nombre Completo</label>
-          <label class="font-weight-bold"
-            >{{ cliente.nombre }} {{ cliente.apellido }}</label
+        <div class="col-md-4">
+          <div
+            class="card border-danger text-center single_confirmation_details"
           >
-          <label
-            >Cédula: <b>{{ cliente.cedula }}</b>
-          </label>
-          <label
-            >Teléfono: <b>{{ cliente.telefono }}</b></label
-          >
-          <label
-            >Ciudad: <b>{{ cliente.ciudad }}</b></label
-          >
-          <label
-            >Dirección: <b>{{ cliente.direccion }}</b></label
-          >
+            <div class="card-header"><h4>Cliente</h4></div>
+            <div class="card card-body text-center">
+              <i class="fas fa-user-circle fa-8x mb-3"></i>
+              <label>Nombre Completo</label>
+              <label class="font-weight-bold"
+                >{{ cliente.nombre }} {{ cliente.apellido }}</label
+              >
+              <label
+                >Cédula: <b>{{ cliente.cedula }}</b>
+              </label>
+              <label
+                >Teléfono: <b>{{ cliente.telefono }}</b></label
+              >
+              <label
+                >Ciudad: <b>{{ cliente.ciudad }}</b></label
+              >
+              <label
+                >Dirección: <b>{{ cliente.direccion }}</b></label
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>

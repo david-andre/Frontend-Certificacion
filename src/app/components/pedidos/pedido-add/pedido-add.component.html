@@ -1,0 +1,55 @@
+<app-navigation></app-navigation>
+<div class="container p-4">
+  <form>
+    <label>Fecha de Petición: {{ pedido.fechaPeticion }}</label>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Cliente</label>
+      <div class="col-3">
+        <select
+          class="custom-select"
+          [(ngModel)]="pedido.idcliente"
+          name="cliente"
+        >
+          <option *ngFor="let cliente of clientes" [value]="cliente.idcliente"
+            >{{ cliente.nombre }} {{ cliente.apellido }}</option
+          >
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Fecha de Ejecución:</label>
+      <div class="col-3">
+        <input
+          type="date"
+          class="form-control"
+          name="fechaEjecucion"
+          [(ngModel)]="pedido.fechaEjecucion"
+        />
+      </div>
+    </div>
+    <button class="btn btn-info mb-3" [routerLink]="['/servicios']">
+      Agregar Servicio
+    </button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Servicio</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of detalles">
+          <td>{{ detalle.nombre }}</td>
+          <td>{{ detalle.costo | currency }}</td>
+          <td>{{ detalle.descripcion }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <label>Costo Total: {{ pedido.costo | currency }}</label>
+    <hr />
+    <button class="btn btn-success" (click)="saveNewPedido()">
+      Guardar
+    </button>
+  </form>
+</div>

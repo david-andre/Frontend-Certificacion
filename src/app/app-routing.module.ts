@@ -8,8 +8,10 @@ import { EmpresasFormComponent } from './components/empresas/empresas-form/empre
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { ServiciosListComponent } from './components/servicios/servicios-list/servicios-list.component';
-import { ServiciosAddComponent } from './components/servicios/servicios-add/servicios-add.component';
-import { ServiciosEditComponent } from './components/servicios/servicios-edit/servicios-edit.component';
+import { ServiciosFormComponent } from './components/servicios/servicios-form/servicios-form.component';
+import { PedidoAddComponent } from './components/pedidos/pedido-add/pedido-add.component';
+import { PedidosListComponent } from './components/pedidos/pedidos-list/pedidos-list.component';
+import { DetallesListComponent } from './components/detalles/detalles-list/detalles-list.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,10 @@ const routes: Routes = [
     component: ClientesFormComponent,
   },
   {
+    path: 'clientes/:id',
+    component: PedidosListComponent,
+  },
+  {
     path: 'empresas',
     component: EmpresasListComponent,
   },
@@ -50,15 +56,23 @@ const routes: Routes = [
   },
   {
     path: 'servicios/add/:id',
-    component: ServiciosAddComponent,
+    component: ServiciosFormComponent,
   },
   {
     path: 'servicios/edit/:id',
-    component: ServiciosEditComponent,
+    component: ServiciosFormComponent,
   },
   {
     path: 'servicios',
     component: ServiciosListComponent,
+  },
+  {
+    path: 'pedidos/add',
+    component: PedidoAddComponent,
+  },
+  {
+    path: 'pedidos/:id',
+    component: DetallesListComponent,
   },
 ];
 

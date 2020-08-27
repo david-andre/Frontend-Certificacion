@@ -16,8 +16,10 @@ import { EmpresasFormComponent } from './components/empresas/empresas-form/empre
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { ServiciosListComponent } from './components/servicios/servicios-list/servicios-list.component';
-import { ServiciosAddComponent } from './components/servicios/servicios-add/servicios-add.component';
-import { ServiciosEditComponent } from './components/servicios/servicios-edit/servicios-edit.component';
+import { ServiciosFormComponent } from './components/servicios/servicios-form/servicios-form.component';
+import { PedidoAddComponent } from './components/pedidos/pedido-add/pedido-add.component';
+import { PedidosListComponent } from './components/pedidos/pedidos-list/pedidos-list.component';
+import { DetallesListComponent } from './components/detalles/detalles-list/detalles-list.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,10 @@ import { ServiciosEditComponent } from './components/servicios/servicios-edit/se
     MainPageComponent,
     LoginRegisterComponent,
     ServiciosListComponent,
-    ServiciosAddComponent,
-    ServiciosEditComponent,
+    ServiciosFormComponent,
+    PedidoAddComponent,
+    PedidosListComponent,
+    DetallesListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ClientesService],

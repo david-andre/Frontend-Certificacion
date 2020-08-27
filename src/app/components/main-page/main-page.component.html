@@ -1,843 +1,568 @@
-<header id="header" class="fixed-top header-transparent">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-xl-11 d-flex align-items-center">
-        <h1 class="logo mr-auto"><a routerLink="/">BUSSINESS SERVICES</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li><a routerLink="/register">Iniciar Sesión</a></li>
-          </ul>
-        </nav>
-        <!-- .nav-menu -->
+<header>
+  <!-- Header Start -->
+  <div class="header-area">
+    <div class="main-header header-sticky">
+      <div class="container-fluid">
+        <div class="menu-wrapper">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html"
+              ><img src="assets/img/logo/logo.png" alt=""
+            /></a>
+          </div>
+          <!-- Main-menu -->
+          <div class="main-menu d-none d-lg-block">
+            <nav>
+              <ul id="navigation">
+                <li class="hot">
+                  <a
+                    class="nav-link"
+                    routerLink="/register"
+                    routerLinkActive="active"
+                    ><i class="fas fa-user-circle mr-1"></i
+                    ><label>Iniciar Sesión</label></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="col-12">
+          <div class="mobile_menu d-block d-lg-none"></div>
+        </div>
       </div>
     </div>
   </div>
+  <!-- Header End -->
 </header>
 <!-- End Header -->
 
 <!-- ======= Intro Section ======= -->
-<section id="intro">
-  <div class="intro-container">
-    <div
-      id="introCarousel"
-      class="carousel slide carousel-fade"
-      data-ride="carousel"
-    >
-      <ol class="carousel-indicators"></ol>
-
-      <div class="carousel-inner" role="listbox">
+<body>
+  <!--? Preloader Start -->
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="assets/img/logo/logo2.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <!--? slider Area Start -->
+    <div class="slider-area">
+      <div class="slider-active">
+        <!-- Single Slider -->
         <div
-          class="carousel-item active"
-          style="background-image: url(assets/img/intro-carousel/2.jpg);"
+          class="single-slider slider-height d-flex align-items-center slide-bg"
         >
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">
-                Pide tu servicio
-              </h2>
-              <p class="animate__animated animate__fadeInUp">
-                Pide tu servicio sin moverte de casa. Tienes todo al alcance de
-                tu mano.
-              </p>
-              <a
-                href="#featured-services"
-                class="btn-get-started scrollto animate__animated animate__fadeInUp"
-                routerLink="/empresas"
-                >Pidelo Ahora</a
+          <div class="container">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+                <div class="hero__caption">
+                  <h1
+                    data-animation="fadeInLeft"
+                    data-delay=".4s"
+                    data-duration="2000ms"
+                  >
+                    Select Your New Perfect Style
+                  </h1>
+                  <p
+                    data-animation="fadeInLeft"
+                    data-delay=".7s"
+                    data-duration="2000ms"
+                  >
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat is aute
+                    irure.
+                  </p>
+                  <!-- Hero-btn -->
+                  <div
+                    class="hero__btn"
+                    data-animation="fadeInLeft"
+                    data-delay=".8s"
+                    data-duration="2000ms"
+                  >
+                    <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xl-5 col-lg-5 col-md-5 col-sm-5 d-none d-sm-block"
               >
+                <div
+                  class="hero__img"
+                  data-animation="bounceIn"
+                  data-delay=".5s"
+                >
+                  <img
+                    src="assets/img/hero/services2.png"
+                    alt=""
+                    class="heartbeat"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div
-          class="carousel-item"
-          style="background-image: url(assets/img/intro-carousel/5.jpg);"
-        >
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">
-                Registra tu servicio
-              </h2>
-              <p class="animate__animated animate__fadeInUp">
-                Si deseas ofrecer tu servicio, este es el lugar correcto.
+      </div>
+    </div>
+    <!-- slider Area End-->
+    <!-- ? New Product Start -->
+    <section class="new-product-area section-padding30">
+      <div class="container">
+        <!-- Section tittle -->
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="section-tittle mb-70">
+              <h2>New Arrivals</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-new-pro mb-30 text-center">
+              <div class="product-img">
+                <img src="assets/img/gallery/new_product1.png" alt="" />
+              </div>
+              <div class="product-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-new-pro mb-30 text-center">
+              <div class="product-img">
+                <img src="assets/img/gallery/new_product2.png" alt="" />
+              </div>
+              <div class="product-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-new-pro mb-30 text-center">
+              <div class="product-img">
+                <img src="assets/img/gallery/new_product3.png" alt="" />
+              </div>
+              <div class="product-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  New Product End -->
+    <!--? Gallery Area Start -->
+    <div class="gallery-area">
+      <div class="container-fluid p-0 fix">
+        <div class="row">
+          <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-gallery mb-30">
+              <div
+                class="gallery-img big-img"
+                style="background-image: url(assets/img/gallery/gallery1.png);"
+              ></div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-gallery mb-30">
+              <div
+                class="gallery-img big-img"
+                style="background-image: url(assets/img/gallery/gallery2.png);"
+              ></div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-12">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
+                <div class="single-gallery mb-30">
+                  <div
+                    class="gallery-img small-img"
+                    style="
+                      background-image: url(assets/img/gallery/gallery3.png);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
+                <div class="single-gallery mb-30">
+                  <div
+                    class="gallery-img small-img"
+                    style="
+                      background-image: url(assets/img/gallery/gallery4.png);
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery Area End -->
+    <!--? Popular Items Start -->
+    <div class="popular-items section-padding30">
+      <div class="container">
+        <!-- Section tittle -->
+        <div class="row justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-10">
+            <div class="section-tittle mb-70 text-center">
+              <h2>Popular Items</h2>
+              <p>
+                Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                gravida.
               </p>
-              <a
-                href="#featured-services"
-                class="btn-get-started scrollto animate__animated animate__fadeInUp"
-                routerLink="/empresas"
-                >Empieza Ahora</a
-              >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center">
+              <div class="popular-img">
+                <img src="assets/img/gallery/popular1.png" alt="" />
+                <div class="img-cap">
+                  <span>Add to cart</span>
+                </div>
+                <div class="favorit-items">
+                  <span class="flaticon-heart"></span>
+                </div>
+              </div>
+              <div class="popular-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center">
+              <div class="popular-img">
+                <img src="assets/img/gallery/popular2.png" alt="" />
+                <div class="img-cap">
+                  <span>Add to cart</span>
+                </div>
+                <div class="favorit-items">
+                  <span class="flaticon-heart"></span>
+                </div>
+              </div>
+              <div class="popular-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center">
+              <div class="popular-img">
+                <img src="assets/img/gallery/popular3.png" alt="" />
+                <div class="img-cap">
+                  <span>Add to cart</span>
+                </div>
+                <div class="favorit-items">
+                  <span class="flaticon-heart"></span>
+                </div>
+              </div>
+              <div class="popular-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center">
+              <div class="popular-img">
+                <img src="assets/img/gallery/popular4.png" alt="" />
+                <div class="img-cap">
+                  <span>Add to cart</span>
+                </div>
+                <div class="favorit-items">
+                  <span class="flaticon-heart"></span>
+                </div>
+              </div>
+              <div class="popular-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center">
+              <div class="popular-img">
+                <img src="assets/img/gallery/popular5.png" alt="" />
+                <div class="img-cap">
+                  <span>Add to cart</span>
+                </div>
+                <div class="favorit-items">
+                  <span class="flaticon-heart"></span>
+                </div>
+              </div>
+              <div class="popular-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center">
+              <div class="popular-img">
+                <img src="assets/img/gallery/popular6.png" alt="" />
+                <div class="img-cap">
+                  <span>Add to cart</span>
+                </div>
+                <div class="favorit-items">
+                  <span class="flaticon-heart"></span>
+                </div>
+              </div>
+              <div class="popular-caption">
+                <h3>
+                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
+                </h3>
+                <span>$ 45,743</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <div class="row justify-content-center">
+          <div class="room-btn pt-70">
+            <a href="catagori.html" class="btn view-btn1">View More Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popular Items End -->
+    <!--? Video Area Start -->
+    <div class="video-area">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <div class="video-wrap">
+              <div class="play-btn">
+                <a
+                  class="popup-video"
+                  href="https://www.youtube.com/watch?v=KMc6DyEJp04"
+                  ><i class="fas fa-play"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Arrow -->
+        <div class="thumb-content-box">
+          <div class="thumb-content">
+            <h3>Next Video</h3>
+            <a href="#"> <i class="flaticon-arrow"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Video Area End -->
+    <!--? Watch Choice  Start-->
+    <div class="watch-area section-padding30">
+      <div class="container">
+        <div class="row align-items-center justify-content-between padding-130">
+          <div class="col-lg-5 col-md-6">
+            <div class="watch-details mb-40">
+              <h2>Watch of Choice</h2>
+              <p>
+                Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse.
+              </p>
+              <a href="shop.html" class="btn">Show Watches</a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-10">
+            <div class="choice-watch-img mb-40">
+              <img src="assets/img/gallery/choce_watch1.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-6 col-md-6 col-sm-10">
+            <div class="choice-watch-img mb-40">
+              <img src="assets/img/gallery/choce_watch2.png" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div class="watch-details mb-40">
+              <h2>Watch of Choice</h2>
+              <p>
+                Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse.
+              </p>
+              <a href="shop.html" class="btn">Show Watches</a>
             </div>
           </div>
         </div>
       </div>
-
-      <a
-        class="carousel-control-prev"
-        href="#introCarousel"
-        role="button"
-        data-slide="prev"
-      >
-        <span
-          class="carousel-control-prev-icon ion-chevron-left"
-          aria-hidden="true"
-        ></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a
-        class="carousel-control-next"
-        href="#introCarousel"
-        role="button"
-        data-slide="next"
-      >
-        <span
-          class="carousel-control-next-icon ion-chevron-right"
-          aria-hidden="true"
-        ></span>
-        <span class="sr-only">Next</span>
-      </a>
+    </div>
+    <!-- Watch Choice  End-->
+    <!--? Shop Method Start-->
+    <div class="shop-method-area">
+      <div class="container">
+        <div class="method-wrapper">
+          <div class="row d-flex justify-content-between">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-method mb-40">
+                <i class="ti-package"></i>
+                <h6>Free Shipping Method</h6>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-method mb-40">
+                <i class="ti-unlock"></i>
+                <h6>Secure Payment System</h6>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-method mb-40">
+                <i class="ti-reload"></i>
+                <h6>Secure Payment System</h6>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Shop Method End-->
+  </main>
+  <footer>
+    <!-- Footer Start-->
+    <div class="footer-area footer-padding">
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="single-footer-caption mb-30">
+                <!-- logo -->
+                <div class="footer-logo">
+                  <a href="index.html"
+                    ><img src="assets/img/logo/logo.png" alt=""
+                  /></a>
+                </div>
+                <div class="footer-tittle">
+                  <div class="footer-pera">
+                    <p>
+                      Asorem ipsum adipolor sdit amet, consectetur adipisicing
+                      elitcf sed do eiusmod tem.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#"> Offers & Discounts</a></li>
+                  <li><a href="#"> Get Coupon</a></li>
+                  <li><a href="#"> Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>New Products</h4>
+                <ul>
+                  <li><a href="#">Woman Cloth</a></li>
+                  <li><a href="#">Fashion Accessories</a></li>
+                  <li><a href="#"> Man Accessories</a></li>
+                  <li><a href="#"> Rubber made Toys</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Support</h4>
+                <ul>
+                  <li><a href="#">Frequently Asked Questions</a></li>
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Report a Payment Issue</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer bottom -->
+        <div class="row align-items-center">
+          <div class="col-xl-7 col-lg-8 col-md-7">
+            <div class="footer-copy-right">
+              <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with
+                <i class="fa fa-heart" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-4 col-md-5">
+            <div class="footer-copy-right f-right">
+              <!-- social -->
+              <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/sai4ull"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End-->
+  </footer>
+  <!--? Search model Begin -->
+  <div class="search-model-box">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+      <div class="search-close-btn">+</div>
+      <form class="search-model-form">
+        <input type="text" id="search-input" placeholder="Searching key....." />
+      </form>
     </div>
   </div>
-</section>
-<!-- End Intro Section -->
-
-<main id="main">
-  <!-- ======= Featured Services Section Section ======= -->
-  <section id="featured-services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 box">
-          <i class="ion-ios-bookmarks-outline"></i>
-          <h4 class="title"><a href="">Pedidos en Línea</a></h4>
-          <p class="description">
-            Todos los pedidos que realices se gestionaran por este medio. No es
-            necesario moverte a ningun lugar
-          </p>
-        </div>
-
-        <div class="col-lg-4 box box-bg">
-          <i class="ion-ios-stopwatch-outline"></i>
-          <h4 class="title"><a href="">Respuesta Rápida</a></h4>
-          <p class="description">
-            Te garantizamos una respuestra rápida por parte de nuestro equipo
-          </p>
-        </div>
-
-        <div class="col-lg-4 box">
-          <i class="ion-ios-heart-outline"></i>
-          <h4 class="title"><a href="">Mantente Seguro</a></h4>
-          <p class="description">
-            Sabemos que por la pandemia debemos estar aislados. Por ello nuestro
-            servicio nos ayuda a mantenernos seguros
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Featured Services Section -->
-
-  <!-- ======= About Us Section ======= -->
-  <section id="about">
-    <div class="container" data-aos="fade-up">
-      <header class="section-header">
-        <h3>Acerca de Nosotros</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </header>
-
-      <div class="row about-cols">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="about-col">
-            <div class="img">
-              <img
-                src="assets/img/about-mission.jpg"
-                alt=""
-                class="img-fluid"
-              />
-              <div class="icon">
-                <i class="ion-ios-speedometer-outline"></i>
-              </div>
-            </div>
-            <h2 class="title"><a href="#">Our Mission</a></h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-              tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="about-col">
-            <div class="img">
-              <img src="assets/img/about-plan.jpg" alt="" class="img-fluid" />
-              <div class="icon"><i class="ion-ios-list-outline"></i></div>
-            </div>
-            <h2 class="title"><a href="#">Our Plan</a></h2>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-              inventore veritatis et quasi architecto beatae vitae dicta sunt
-              explicabo.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="about-col">
-            <div class="img">
-              <img src="assets/img/about-vision.jpg" alt="" class="img-fluid" />
-              <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-            </div>
-            <h2 class="title"><a href="#">Our Vision</a></h2>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit,
-              sed quia magni dolores eos qui ratione voluptatem sequi nesciunt
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End About Us Section -->
-
-  <!-- ======= Services Section ======= -->
-  <section id="services">
-    <div class="container" data-aos="fade-up">
-      <header class="section-header wow fadeInUp">
-        <h3>Services</h3>
-        <p>
-          Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-          partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei
-          ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno
-          tridexa panatarel.
-        </p>
-      </header>
-
-      <div class="row">
-        <div
-          class="col-lg-4 col-md-6 box"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-          <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-          <p class="description">
-            Voluptatum deleniti atque corrupti quos dolores et quas molestias
-            excepturi sint occaecati cupiditate non provident
-          </p>
-        </div>
-        <div
-          class="col-lg-4 col-md-6 box"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-          <h4 class="title"><a href="">Dolor Sitema</a></h4>
-          <p class="description">
-            Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat tarad limino ata
-          </p>
-        </div>
-        <div
-          class="col-lg-4 col-md-6 box"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-          <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="description">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur
-          </p>
-        </div>
-        <div
-          class="col-lg-4 col-md-6 box"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-          <h4 class="title"><a href="">Magni Dolores</a></h4>
-          <p class="description">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum
-          </p>
-        </div>
-        <div
-          class="col-lg-4 col-md-6 box"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
-          <h4 class="title"><a href="">Nemo Enim</a></h4>
-          <p class="description">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque
-          </p>
-        </div>
-        <div
-          class="col-lg-4 col-md-6 box"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <div class="icon"><i class="ion-ios-people-outline"></i></div>
-          <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-          <p class="description">
-            Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-            tempore, cum soluta nobis est eligendi
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Services Section -->
-
-  <!-- ======= Call To Action Section ======= -->
-  <section id="call-to-action">
-    <div class="container text-center" data-aos="zoom-in">
-      <h3>Call To Action</h3>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a class="cta-btn" href="#">Call To Action</a>
-    </div>
-  </section>
-  <!-- End Call To Action Section -->
-
-  <!-- ======= Facts Section ======= -->
-  <section id="facts">
-    <div class="container" data-aos="fade-up">
-      <header class="section-header">
-        <h3>Facts</h3>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque
-        </p>
-      </header>
-
-      <div class="row counters">
-        <div class="col-lg-3 col-6 text-center">
-          <span data-toggle="counter-up">274</span>
-          <p>Clients</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-toggle="counter-up">421</span>
-          <p>Projects</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-toggle="counter-up">1,364</span>
-          <p>Hours Of Support</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-toggle="counter-up">18</span>
-          <p>Hard Workers</p>
-        </div>
-      </div>
-
-      <div class="facts-img">
-        <img src="assets/img/facts-img.png" alt="" class="img-fluid" />
-      </div>
-    </div>
-  </section>
-  <!-- End Facts Section -->
-
-  <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="section-bg">
-    <div class="container" data-aos="fade-up">
-      <header class="section-header">
-        <h3 class="section-title">Our Portfolio</h3>
-      </header>
-
-      <div
-        class="row portfolio-container"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <figure>
-              <img
-                src="assets/img/portfolio/app1.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <a
-                href="assets/img/portfolio/app1.jpg"
-                data-lightbox="portfolio"
-                data-title="App 1"
-                class="link-preview"
-                ><i class="ion ion-eye"></i
-              ></a>
-              <a
-                href="portfolio-details.html"
-                class="link-details"
-                title="More Details"
-                ><i class="ion ion-android-open"></i
-              ></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">App 1</a></h4>
-              <p>App</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <figure>
-              <img
-                src="assets/img/portfolio/web3.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <a
-                href="assets/img/portfolio/web3.jpg"
-                class="link-preview venobox"
-                data-gall="portfolioGallery"
-                title="Web 3"
-                ><i class="ion ion-eye"></i
-              ></a>
-              <a
-                href="portfolio-details.html"
-                class="link-details"
-                title="More Details"
-                ><i class="ion ion-android-open"></i
-              ></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Web 3</a></h4>
-              <p>Web</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <figure>
-              <img
-                src="assets/img/portfolio/app3.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <a
-                href="assets/img/portfolio/app3.jpg"
-                class="link-preview venobox"
-                data-gall="portfolioGallery"
-                title="App 3"
-                ><i class="ion ion-eye"></i
-              ></a>
-              <a
-                href="portfolio-details.html"
-                class="link-details"
-                title="More Details"
-                ><i class="ion ion-android-open"></i
-              ></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">App 3</a></h4>
-              <p>App</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <figure>
-              <img
-                src="assets/img/portfolio/card1.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <a
-                href="assets/img/portfolio/card1.jpg"
-                class="link-preview venobox"
-                data-gall="portfolioGallery"
-                title="Card 1"
-                ><i class="ion ion-eye"></i
-              ></a>
-              <a
-                href="portfolio-details.html"
-                class="link-details"
-                title="More Details"
-                ><i class="ion ion-android-open"></i
-              ></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Card 1</a></h4>
-              <p>Card</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <figure>
-              <img
-                src="assets/img/portfolio/card3.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <a
-                href="assets/img/portfolio/card3.jpg"
-                class="link-preview venobox"
-                data-gall="portfolioGallery"
-                title="Card 3"
-                ><i class="ion ion-eye"></i
-              ></a>
-              <a
-                href="portfolio-details.html"
-                class="link-details"
-                title="More Details"
-                ><i class="ion ion-android-open"></i
-              ></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Card 3</a></h4>
-              <p>Card</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <figure>
-              <img
-                src="assets/img/portfolio/web1.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <a
-                href="assets/img/portfolio/web1.jpg"
-                class="link-preview venobox"
-                data-gall="portfolioGallery"
-                title="Web 1"
-                ><i class="ion ion-eye"></i
-              ></a>
-              <a
-                href="portfolio-details.html"
-                class="link-details"
-                title="More Details"
-                ><i class="ion ion-android-open"></i
-              ></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Web 1</a></h4>
-              <p>Web</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Portfolio Section -->
-
-  <!-- ======= Team Section ======= -->
-  <section id="team">
-    <div class="container" data-aos="fade-up">
-      <div class="section-header">
-        <h3>Team</h3>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque
-        </p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/team-1.jpg" class="img-fluid" alt="" />
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/team-2.jpg" class="img-fluid" alt="" />
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <div class="social">
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/img/team-3.jpg" class="img-fluid" alt="" />
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <div class="social">
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="400">
-            <img src="assets/img/team-4.jpg" class="img-fluid" alt="" />
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <div class="social">
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Team Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="section-bg">
-    <div class="container" data-aos="fade-up">
-      <div class="section-header">
-        <h3>Contact Us</h3>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque
-        </p>
-      </div>
-
-      <div class="row contact-info">
-        <div class="col-md-4">
-          <div class="contact-address">
-            <i class="ion-ios-location-outline"></i>
-            <h3>Address</h3>
-            <address>A108 Adam Street, NY 535022, USA</address>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="contact-phone">
-            <i class="ion-ios-telephone-outline"></i>
-            <h3>Phone Number</h3>
-            <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="contact-email">
-            <i class="ion-ios-email-outline"></i>
-            <h3>Email</h3>
-            <p><a href="mailto:info@example.com">info@example.com</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="form">
-        <form
-          action="forms/contact.php"
-          method="post"
-          role="form"
-          class="php-email-form"
-        >
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input
-                type="text"
-                name="name"
-                class="form-control"
-                id="name"
-                placeholder="Your Name"
-                data-rule="minlen:4"
-                data-msg="Please enter at least 4 chars"
-              />
-              <div class="validate"></div>
-            </div>
-            <div class="form-group col-md-6">
-              <input
-                type="email"
-                class="form-control"
-                name="email"
-                id="email"
-                placeholder="Your Email"
-                data-rule="email"
-                data-msg="Please enter a valid email"
-              />
-              <div class="validate"></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              name="subject"
-              id="subject"
-              placeholder="Subject"
-              data-rule="minlen:4"
-              data-msg="Please enter at least 8 chars of subject"
-            />
-            <div class="validate"></div>
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-control"
-              name="message"
-              rows="5"
-              data-rule="required"
-              data-msg="Please write something for us"
-              placeholder="Message"
-            ></textarea>
-            <div class="validate"></div>
-          </div>
-          <div class="mb-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">
-              Your message has been sent. Thank you!
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- End Contact Section -->
-</main>
-<!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 footer-info">
-          <h3>BizPage</h3>
-          <p>
-            Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada
-            terra videa magna derita valies darta donna mare fermentum iaculis
-            eu non diam phasellus. Scelerisque felis imperdiet proin fermentum
-            leo. Amet volutpat consequat mauris nunc congue.
-          </p>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
-            <li>
-              <i class="ion-ios-arrow-right"></i> <a href="#">About us</a>
-            </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i> <a href="#">Services</a>
-            </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i>
-              <a href="#">Terms of service</a>
-            </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h4>Contact Us</h4>
-          <p>
-            A108 Adam Street <br />
-            New York, NY 535022<br />
-            United States <br />
-            <strong>Phone:</strong> +1 5589 55488 55<br />
-            <strong>Email:</strong> info@example.com<br />
-          </p>
-
-          <div class="social-links">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-            <a href="#" class="google-plus"
-              ><i class="fa fa-google-plus"></i
-            ></a>
-            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>
-            Tamen quem nulla quae legam multos aute sint culpa legam noster
-            magna veniam enim veniam illum dolore legam minim quorum culpa amet
-            magna export quem marada parida nodela caramase seza.
-          </p>
-          <form action="" method="post">
-            <input type="email" name="email" /><input
-              type="submit"
-              value="Subscribe"
-            />
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!--
-        All the links in the footer should remain intact.
-        You can delete the links only if you purchased the pro version.
-        Licensing information: https://bootstrapmade.com/license/
-        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-      -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </div>
-</footer>
-<!-- End Footer -->
+  <!-- Search model end -->
+</body>

@@ -1,0 +1,28 @@
+<app-navigation></app-navigation>
+<div class="container p-4">
+  <p>Fecha de Petición: {{ detalles[0].Pedido.fechaPeticion | date }}</p>
+  <p>Estado: {{ detalles[0].Pedido.estado }}</p>
+  <p>Fecha de Ejecución: {{ detalles[0].Pedido.fechaEjecucion | date }}</p>
+  <p>Costo: {{ detalles[0].Pedido.costo | currency }}</p>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let detalle of detalles">
+      <div class="card text-center mb-4">
+        <div
+          class="card-header d-flex bg-dark text-white justify-content-between align-items-center"
+        >
+          {{ detalle.Servicio.nombre }}
+        </div>
+        <div class="card-body">
+          <p>
+            <strong class="font-weight-bold">Empresa: </strong>
+            {{ detalle.Servicio.Empresa.nombre }}
+          </p>
+          <p>
+            <strong class="font-weight-bold">Descripción: </strong
+            >{{ detalle.Servicio.descripcion }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
