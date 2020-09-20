@@ -1,0 +1,100 @@
+<header>
+  <!-- Header Start -->
+  <div class="header-area">
+    <div class="main-header header-sticky">
+      <div class="container-fluid">
+        <div class="menu-wrapper">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html"
+              ><img src="assets/img/logo/logo.png" alt=""
+            /></a>
+          </div>
+          <!-- Main-menu -->
+          <div class="main-menu d-none d-lg-block">
+            <nav>
+              <ul id="navigation">
+                <li>
+                  <a
+                    class="nav-link"
+                    routerLink="/pedidos-empresas"
+                    routerLinkActive="active"
+                    ><i class="fas fa-clipboard-list mr-2"></i
+                    ><label>Pedidos</label></a
+                  >
+                </li>
+                <li class="ml-3">
+                  <a
+                    class="nav-link"
+                    routerLink="/empresas"
+                    routerLinkActive="active"
+                    ><i class="fas fa-store-alt mr-1"></i
+                    ><label>Empresas</label></a
+                  >
+                </li>
+                <li class="ml-3">
+                  <a
+                    class="nav-link"
+                    routerLink="/estadisticas/empresas"
+                    routerLinkActive="active"
+                    ><i class="fas fa-chart-line mr-2"></i
+                    ><label>Estadísticas</label></a
+                  >
+                </li>
+                <li>
+                  <a><i class="fas fa-ellipsis-h fa-2x"></i></a>
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        routerLink="/profile"
+                        class="nav-link"
+                        routerLinkActive="active"
+                        ><i class="far fa-user-circle mr-2"></i
+                        ><label>Mi perfil</label></a
+                      >
+                    </li>
+                    <li>
+                      <a href="index.html" (click)="logOut()"
+                        ><i class="fas fa-door-open mr-1"></i
+                        ><label>Cerrar Sesión</label></a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Header Right -->
+
+          <div class="text-rigth text-white">
+            <li>
+              <a><i class="fas fa-ellipsis-h fa-2x"></i></a>
+              <ul class="submenu">
+                <li>
+                  <a
+                    class="nav-link"
+                    routerLink="/empresas"
+                    routerLinkActive="active"
+                    ><i class="fas fa-store-alt mr-1"></i
+                    ><label>Mis Empresas</label></a
+                  >
+                </li>
+                <li>
+                  <a href="index.html" (click)="logOut()"
+                    ><i class="fas fa-door-open mr-1"></i
+                    ><label>Cerrar Sesión</label></a
+                  >
+                </li>
+              </ul>
+            </li>
+          </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="col-12">
+          <div class="mobile_menu d-block d-lg-none"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header End -->
+</header>

@@ -6,19 +6,24 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-empresas-list',
   templateUrl: './empresas-list.component.html',
-  styleUrls: ['./empresas-list.component.css']
+  styleUrls: ['./empresas-list.component.css'],
 })
 export class EmpresasListComponent implements OnInit {
-
+  loggedCliente: any = {
+    token: '',
+    user: 0,
+  };
   empresas: any = [];
   constructor(private empresasService: EmpresasService) {}
 
   ngOnInit(): void {
+    var usuario = localStorage.getItem('valid');
+    this.loggedCliente = JSON.parse(usuario);
     this.getEmpresas();
   }
 
   getEmpresas() {
-    this.empresasService.getEmpresas().subscribe(
+    this.empresasService.getEmpresasByUser(this.loggedCliente.user).subscribe(
       (res) => {
         this.empresas = res;
       },
@@ -53,8 +58,8 @@ export class EmpresasListComponent implements OnInit {
           },
           (err) => {
             Swal.fire(
-              'Ha ocurrido un error',
-              'No se pudo eliminar la empresa',
+              'No se puede eliminar',
+              'Existen clientes que han pedido algún servicio de tu empresa',
               'error'
             );
             console.error(err);
@@ -63,5 +68,4 @@ export class EmpresasListComponent implements OnInit {
       }
     });
   }
-
 }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PedidosService {
-  API_URI = 'https://localhost:44309/api';
+  API_URI = 'http://daparedes15-001-site1.htempurl.com/api';
   constructor(private http: HttpClient) {}
 
   httpOptions = {
@@ -18,7 +18,7 @@ export class PedidosService {
     }),
   };
 
-  getPedidos(id: string) {
+  getPedidosByClient(id: string) {
     return this.http.get(`${this.API_URI}/pedidos/getbyclient/${id}`);
   }
   getPedido(id: string) {

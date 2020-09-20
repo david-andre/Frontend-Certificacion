@@ -24,6 +24,7 @@ export class DetallesListComponent implements OnInit {
         (res) => {
           console.log(res);
           this.detalles = res;
+          console.log(this.detalles);
         },
         (err) => {
           Swal.fire(

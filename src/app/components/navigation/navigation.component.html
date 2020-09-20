@@ -17,62 +17,82 @@
                 <li>
                   <a
                     class="nav-link"
-                    routerLink="/clientes"
+                    routerLink="/profile"
                     routerLinkActive="active"
-                    ><i class="fas fa-users mr-1"></i><label>Clientes</label></a
+                    ><i class="far fa-user-circle mr-2"></i
+                    ><label style="cursor: pointer;">Mi Perfil</label></a
                   >
                 </li>
-                <li>
+                <li class="ml-5">
                   <a
                     class="nav-link"
-                    routerLink="/empresas"
+                    [routerLink]="['/clientes', cliente.idcliente]"
                     routerLinkActive="active"
-                    ><i class="fas fa-store-alt mr-1"></i
-                    ><label>Empresas</label></a
+                    ><i class="fas fa-clipboard-list mr-2"></i
+                    ><label style="cursor: pointer;">Pedidos</label></a
                   >
                 </li>
-                <li class="hot">
+                <li class="hot ml-5">
                   <a
                     class="nav-link"
                     routerLink="/servicios"
                     routerLinkActive="active"
                     ><i class="fas fa-shopping-bag mr-1"></i
-                    ><label>Servicios</label></a
+                    ><label style="cursor: pointer;">Servicios</label></a
                   >
                 </li>
+                <li class="ml-5">
+                  <a
+                    class="nav-link"
+                    routerLink="/estadisticas/clientes"
+                    routerLinkActive="active"
+                    ><i class="fas fa-chart-line mr-2"></i
+                    ><label style="cursor: pointer;">Estadísticas</label></a
+                  >
+                </li>
+                <!-- <li>
+                   <a
+                    class="nav-link"
+                    routerLink="/clientes"
+                    routerLinkActive="active"
+                    ><i class="fas fa-users mr-1"></i><label>Clientes</label></a
+                  >
+                </li> -->
                 <li>
-                  <a href="blog.html">Pedidos</a>
+                  <a><i class="fas fa-ellipsis-h fa-2x"></i></a>
                   <ul class="submenu">
                     <li>
                       <a
+                        routerLink="/empresas"
                         class="nav-link"
-                        routerLink="/pedidos/add"
                         routerLinkActive="active"
-                        ><i class="fas fa-clipboard-list mr-1"></i
-                        ><label>Nuevo Pedido</label></a
+                        ><i class="fas fa-store-alt mr-1"></i
+                        ><label style="cursor: pointer;">Mis Empresas</label></a
+                      >
+                    </li>
+                    <li>
+                      <a href="index.html" (click)="logOut()"
+                        ><i class="fas fa-door-open mr-1"></i
+                        ><label style="cursor: pointer;">Cerrar Sesión</label></a
                       >
                     </li>
                   </ul>
                 </li>
-                <li><a href="contact.html">Contacto</a></li>
               </ul>
             </nav>
           </div>
           <!-- Header Right -->
-          <div class="header-right">
-            <ul>
-              <li>
-                <div class="nav-search search-switch">
-                  <span class="flaticon-search"></span>
-                </div>
-              </li>
-              <li>
-                <a href="login.html"><span class="flaticon-user"></span></a>
-              </li>
-              <li>
-                <a href="cart.html"
-                  ><span class="flaticon-shopping-cart"></span
-                ></a>
+          <div class="text-rigth">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <i
+                  class="fas fa-shopping-cart fa-2x"
+                  routerLink="/pedidos/add"
+                  style="cursor: pointer;"
+                ></i
+                ><span class="badge badge-pill badge-danger mr-3">{{
+                  cart
+                }}</span>
               </li>
             </ul>
           </div>

@@ -18,8 +18,13 @@ export class ClientesFormComponent implements OnInit {
     telefono: '',
     ciudad: '',
     direccion: '',
+    idusuario: 0,
   };
 
+  loggedCliente: any = {
+    token: '',
+    user: 0,
+  };
   edit: boolean = false;
 
   constructor(
@@ -29,8 +34,10 @@ export class ClientesFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    var usuario = localStorage.getItem('valid');
+    this.loggedCliente = JSON.parse(usuario);
+    this.cliente.idusuario = this.loggedCliente.user;
     const params = this.activatedRoute.snapshot.params;
-    console.log(params);
     if (params.id) {
       this.clientesService.getCliente(params.id).subscribe(
         (res) => {
@@ -45,7 +52,7 @@ export class ClientesFormComponent implements OnInit {
             'error'
           );
           console.error(err);
-          this.router.navigate(['/clientes']);
+          this.router.navigate(['/home']);
         }
       );
     }
@@ -53,11 +60,16 @@ export class ClientesFormComponent implements OnInit {
 
   saveNewCliente() {
     delete this.cliente.id;
+
     this.clientesService.saveCliente(this.cliente).subscribe(
       (res) => {
         console.log(res);
-        Swal.fire('Creación exitosa', 'Un nuevo cliente ha sido creado', 'success');
-        this.router.navigate(['/clientes']);
+        Swal.fire(
+          'Creación exitosa',
+          'Un nuevo cliente ha sido creado',
+          'success'
+        );
+        this.router.navigate(['/profile']);
       },
       (err) => {
         Swal.fire(
@@ -80,7 +92,7 @@ export class ClientesFormComponent implements OnInit {
           'Los cambios se han realizado exitosamente',
           'success'
         );
-        this.router.navigate(['/clientes']);
+        this.router.navigate(['/profile']);
       });
     (err) => {
       Swal.fire(

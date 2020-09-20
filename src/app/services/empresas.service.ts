@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EmpresasService {
-  API_URI = 'https://localhost:44309/api';
+  API_URI = 'http://daparedes15-001-site1.htempurl.com/api';
   constructor(private http: HttpClient) {}
 
   httpOptions = {
@@ -22,7 +22,7 @@ export class EmpresasService {
     return this.http.get(`${this.API_URI}/empresas`);
   }
   getEmpresa(id: string) {
-    return this.http.get(`${this.API_URI}/empresas/${id}`);
+    return this.http.get(`${this.API_URI}/empresas/getone/${id}`);
   }
   saveEmpresa(empresa: Empresa) {
     return this.http.post(`${this.API_URI}/empresas`, empresa);
@@ -34,6 +34,12 @@ export class EmpresasService {
     id: string | number,
     updatedEmpresa: Empresa
   ): Observable<Empresa> {
-    return this.http.put(`${this.API_URI}/empresas/${id}`, updatedEmpresa);
+    return this.http.put(
+      `${this.API_URI}/empresas/${id}`,
+      updatedEmpresa
+    );
+  }
+  getEmpresasByUser(id: string) {
+    return this.http.get(`${this.API_URI}/empresas/getbyuser/${id}`);
   }
 }

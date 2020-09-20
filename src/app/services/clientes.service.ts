@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ClientesService {
-  API_URI = 'https://localhost:44309/api';
+  API_URI = 'http://daparedes15-001-site1.htempurl.com/api';
   constructor(private http: HttpClient) {}
 
   httpOptions = {
@@ -22,7 +22,7 @@ export class ClientesService {
     return this.http.get(`${this.API_URI}/clientes`);
   }
   getCliente(id: string) {
-    return this.http.get(`${this.API_URI}/clientes/${id}`);
+    return this.http.get(`${this.API_URI}/clientes/GetOne/${id}`);
   }
   saveCliente(cliente: Cliente) {
     return this.http.post(`${this.API_URI}/clientes`, cliente);
@@ -35,5 +35,8 @@ export class ClientesService {
     updatedCliente: Cliente
   ): Observable<Cliente> {
     return this.http.put(`${this.API_URI}/clientes/${id}`, updatedCliente);
+  }
+  getClienteByUser(id: string) {
+    return this.http.get(`${this.API_URI}/clientes/getbyuser/${id}`);
   }
 }

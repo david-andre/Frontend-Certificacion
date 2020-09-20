@@ -1,0 +1,52 @@
+<app-navigation2></app-navigation2>
+<div class="bg">
+  <section class="confirmation_part p-5">
+    <div class="container">
+      <h1 class="text-center m-4">Pedido</h1>
+      <div class="row">
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>Información del Pedido</h4>
+            <ul>
+              <li>
+                <p>Fecha de Petición</p>
+                <span>{{ detalles[0].Pedido.fechaPeticion | date }}</span>
+              </li>
+              <li>
+                <p>Fecha de Ejecución</p>
+                <span>{{ detalles[0].Pedido.fechaEjecucion | date }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>Información del Cliente</h4>
+            <ul>
+              <li>
+                <p>Cliente</p>
+                <span
+                  >{{ detalles[0].Pedido.Cliente.nombre }}
+                  {{ detalles[0].Pedido.Cliente.apellido }}</span
+                >
+              </li>
+              <li>
+                <p>Teléfono</p>
+                <span>{{ detalles[0].Pedido.Cliente.telefono }}</span>
+              </li>
+              <li>
+                <p>Ciudad</p>
+                <span>{{ detalles[0].Pedido.Cliente.ciudad }}</span>
+              </li>
+              <li>
+                <p>Dirección</p>
+                <span>{{ detalles[0].Pedido.Cliente.direccion }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

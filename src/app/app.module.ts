@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,16 @@ import { ServiciosFormComponent } from './components/servicios/servicios-form/se
 import { PedidoAddComponent } from './components/pedidos/pedido-add/pedido-add.component';
 import { PedidosListComponent } from './components/pedidos/pedidos-list/pedidos-list.component';
 import { DetallesListComponent } from './components/detalles/detalles-list/detalles-list.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AuthGuard } from './services/auth.guard';
+import { ClientesProfileComponent } from './components/clientes/clientes-profile/clientes-profile.component';
+import { Navigation2Component } from './components/navigation2/navigation2.component';
+import { PedidosEmpresasComponent } from './components/pedidos-empresas/pedidos-empresas.component';
+import { PedidosServiciosComponent } from './components/pedidos-servicios/pedidos-servicios.component';
+import { DetalleEmpresaComponent } from './components/detalle-empresa/detalle-empresa.component';
+import { EstadisticasEmpresasComponent } from './components/estadisticas/estadisticas-empresas/estadisticas-empresas.component';
+import { EstadisticasClientesComponent } from './components/estadisticas/estadisticas-clientes/estadisticas-clientes.component';
+import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +47,24 @@ import { DetallesListComponent } from './components/detalles/detalles-list/detal
     PedidoAddComponent,
     PedidosListComponent,
     DetallesListComponent,
+    FooterComponent,
+    ClientesProfileComponent,
+    Navigation2Component,
+    PedidosEmpresasComponent,
+    PedidosServiciosComponent,
+    DetalleEmpresaComponent,
+    EstadisticasEmpresasComponent,
+    EstadisticasClientesComponent,
+    MyBarChartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [ClientesService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ChartsModule,
+  ],
+  providers: [ClientesService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

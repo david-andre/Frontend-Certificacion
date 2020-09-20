@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ServiciosService {
-  API_URI = 'https://localhost:44309/api';
+  API_URI = 'http://daparedes15-001-site1.htempurl.com/api';
   constructor(private http: HttpClient) {}
 
   httpOptions = {

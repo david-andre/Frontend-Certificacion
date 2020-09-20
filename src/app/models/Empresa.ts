@@ -4,4 +4,5 @@ export interface Empresa {
   telefono?: string;
   ciudad?: string;
   direccion?: string;
+  idusuario?: number;
 }

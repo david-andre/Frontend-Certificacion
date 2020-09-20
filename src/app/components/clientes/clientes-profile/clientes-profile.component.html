@@ -1,0 +1,43 @@
+<app-navigation></app-navigation>
+<div class="bg">
+  <div class="container p-5">
+    <h1 class="text-center ml-5">Mi Perfil</h1>
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-4">
+        <div class="card text-center mb-4">
+          <div
+            class="card-header bg-dark text-white align-items-center text-center h1"
+          >
+            {{ cliente.nombre }}
+            {{ cliente.apellido }}
+          </div>
+          <div class="card-body">
+            <i class="fas fa-user-circle fa-8x mb-3"></i>
+            <p>
+              <strong class="font-weight-bold">Cédula: </strong>
+              {{ cliente.cedula }}
+            </p>
+            <p>
+              <strong class="font-weight-bold">Teléfono: </strong
+              >{{ cliente.telefono }}
+            </p>
+            <p>
+              <strong class="font-weight-bold">Ciudad: </strong
+              >{{ cliente.ciudad }}
+            </p>
+            <p>
+              <strong class="font-weight-bold">Dirección: </strong
+              >{{ cliente.direccion }}
+            </p>
+            <a
+              class="btn btn-outline-success btn-block"
+              [routerLink]="['/clientes/edit', cliente.idcliente]"
+              ><i class="fas fa-user-edit fa-2x mr-1"></i> Editar Perfil</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

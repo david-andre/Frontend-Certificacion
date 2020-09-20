@@ -5,7 +5,7 @@ import { ClientesService } from '../../../services/clientes.service';
 import { ServiciosService } from '../../../services/servicios.service';
 import { DetallePedidosService } from '../../../services/detalle-pedidos.service';
 import { PedidosService } from '../../../services/pedidos.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +15,20 @@ import Swal from 'sweetalert2';
 })
 export class PedidoAddComponent implements OnInit {
   clientes: any = [];
+  cliente: any = {
+    idcliente: 0,
+    nombre: '',
+    apellido: '',
+    cedula: '',
+    telefono: '',
+    ciudad: '',
+    direccion: '',
+    idusuario: 0,
+  };
+  loggedCliente: any = {
+    token: '',
+    user: 0,
+  };
   detalles: any = [];
   pedido: Pedido = {
     id: 0,
@@ -41,49 +55,68 @@ export class PedidoAddComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getCurrentDate();
+    var usuario = localStorage.getItem('valid');
+    this.loggedCliente = JSON.parse(usuario);
     this.getClientes();
+    this.getCliente();
+    this.getCurrentDate();
     this.getSessionData();
   }
 
   saveNewPedido() {
-    delete this.pedido.id;
-    this.pedidosService.savePedido(this.pedido).subscribe(
-      (res) => {
-        this.detalles.forEach((element) => {
-          this.detallesService.saveDetalle(element).subscribe(
-            (res) => {
-              console.log(res);
-            },
-            (err) => {
-              console.error(err);
-            }
+    if (sessionStorage.getItem('detalles') === null) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+      });
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Tu pedido esta vacio',
+      });
+    } else {
+      delete this.pedido.id;
+      this.pedido.idcliente = this.cliente.idcliente;
+      this.pedidosService.savePedido(this.pedido).subscribe(
+        (res) => {
+          this.detalles.forEach((element) => {
+            this.detallesService.saveDetalle(element).subscribe(
+              (res) => {
+                console.log(res);
+              },
+              (err) => {
+                console.error(err);
+              }
+            );
+          });
+          console.log(res);
+          sessionStorage.removeItem('detalles');
+          Swal.fire(
+            'Creación exitosa',
+            'Un nuevo pedido ha sido creado',
+            'success'
           );
-        });
-        console.log(res);
-        sessionStorage.removeItem('detalles');
-        Swal.fire(
-          'Creación exitosa',
-          'Un nuevo pedido ha sido creado',
-          'success'
-        );
-        this.router.navigate(['/clientes']);
-      },
-      (err) => {
-        Swal.fire(
-          'Ha ocurrido un error',
-          'No se ha podido crear el pedido',
-          'error'
-        );
-        console.error(err);
-      }
-    );
+          this.router.navigate(['/profile']);
+        },
+        (err) => {
+          Swal.fire(
+            'Ha ocurrido un error',
+            'No se ha podido crear el pedido',
+            'error'
+          );
+          console.error(err);
+        }
+      );
+    }
   }
 
   getClientes() {
     this.clientesService.getClientes().subscribe(
       (res) => {
         this.clientes = res;
+        console.log(this.clientes);
       },
       (err) => {
         Swal.fire({
@@ -133,5 +166,24 @@ export class PedidoAddComponent implements OnInit {
         }
       );
     });
+  }
+
+  getCliente() {
+    this.clientesService.getClienteByUser(this.loggedCliente.user).subscribe(
+      (res) => {
+        this.cliente = res;
+        console.log(res);
+      },
+      (err) => {
+        this.router.navigate(['/clientes/add']);
+        console.error(err);
+      }
+    );
+  }
+
+  deleteDetalles() {
+    sessionStorage.removeItem('detalles');
+    this.detalles = [];
+    this.pedido.costo = 0;
   }
 }

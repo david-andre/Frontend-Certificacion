@@ -1,36 +1,152 @@
-<app-navigation></app-navigation>
-<div class="container p-4">
-  <div class="row">
-    <div *ngIf="idcliente"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let pedido of pedidos">
-      <div class="card text-center mb-4">
-        <div
-          class="card-header d-flex bg-dark text-white justify-content-between align-items-center"
-        >
-          {{ pedido.fechaPeticion | date: "dd-MM-yyyy" }}
-        </div>
-        <div class="card-body">
-          <p>
-            <strong class="font-weight-bold">Estado: </strong>
-            {{ pedido.estado }}
-          </p>
-          <p>
-            <strong class="font-weight-bold">Fecha de Ejecución: </strong
-            >{{ pedido.fechaEjecucion | date: "dd-MM-yyyy" }}
-          </p>
-          <p>
-            <strong class="font-weight-bold">Costo: </strong
-            >{{ pedido.costo | currency }}
-          </p>
-          <a
+<app-navigation *ngIf="toggle; else elseBlock2"></app-navigation>
+<ng-template #elseBlock2><app-navigation2></app-navigation2></ng-template>
+<div class="bg">
+  <div class="container p-5">
+    <h1 class="m-3">Mis Pedidos</h1>
+    <div class="row mt-5" *ngIf="toggle; else elseBlock">
+      <div class="col-md-4" *ngFor="let pedido of pedidos">
+        <div class="card text-center mb-4">
+          <div
+            class="card-header d-flex bg-dark text-white justify-content-between align-items-center"
+          >
+            Fecha de Petición: {{ pedido.fechaPeticion | date: "dd-MM-yyyy" }}
+          </div>
+          <div class="card-body">
+            <p>
+              <strong class="font-weight-bold">Fecha de Ejecución: </strong
+              >{{ pedido.fechaEjecucion | date: "dd-MM-yyyy" }}
+            </p>
+            <p>
+              <strong class="font-weight-bold">Costo: </strong
+              >{{ pedido.costo | currency }}
+            </p>
+            <a
               class="btn btn-info btn-block text-white"
               [routerLink]="['/pedidos', pedido.idpedido]"
               ><i class="fas fa-edit fa-2x mr-1"></i>Detalle</a
             >
+          </div>
         </div>
       </div>
     </div>
+    <ng-template #elseBlock
+      ><div class="row">
+        <div class="col-md-4" *ngFor="let pedido of pedidos">
+          <div
+            *ngIf="pedido.Pedido.estado === 'Aprovado'"
+            class="card text-center mb-4"
+          >
+            <div class="card-header bg-success text-white">
+              {{ pedido.Pedido.estado }}
+            </div>
+            <div class="card-body">
+              <p>
+                <strong class="font-weight-bold">Cliente: </strong>
+                {{ pedido.Pedido.Cliente.nombre }}
+                {{ pedido.Pedido.Cliente.apellido }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Petición: </strong
+                >{{ pedido.Pedido.fechaPeticion | date: "dd-MM-yyyy" }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Ejecución: </strong
+                >{{ pedido.Pedido.fechaEjecucion | date: "dd-MM-yyyy" }}
+              </p>
+              <a
+                class="btn btn-info btn-block text-white"
+                [routerLink]="['/detalle', pedido.idpedido]"
+                ><i class="fas fa-edit fa-2x mr-1"></i>Detalle</a
+              >
+            </div>
+          </div>
+          <div
+            *ngIf="pedido.Pedido.estado === 'Denegado'"
+            class="card text-center mb-4"
+          >
+            <div class="card-header bg-danger text-white">
+              {{ pedido.Pedido.estado }}
+            </div>
+            <div class="card-body">
+              <p>
+                <strong class="font-weight-bold">Cliente: </strong>
+                {{ pedido.Pedido.Cliente.nombre }}
+                {{ pedido.Pedido.Cliente.apellido }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Petición: </strong
+                >{{ pedido.Pedido.fechaPeticion | date: "dd-MM-yyyy" }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Ejecución: </strong
+                >{{ pedido.Pedido.fechaEjecucion | date: "dd-MM-yyyy" }}
+              </p>
+              <a
+                class="btn btn-info btn-block text-white"
+                [routerLink]="['/detalle', pedido.idpedido]"
+                ><i class="fas fa-edit fa-2x mr-1"></i>Detalle</a
+              >
+            </div>
+          </div>
+          <div
+            *ngIf="true"
+            class="card text-center mb-4"
+          >
+            <div class="card-header bg-dark text-white">
+             
+            </div>
+            <div class="card-body">
+              <p>
+                <strong class="font-weight-bold">Cliente: </strong>
+                {{ pedido.Pedido.Cliente.nombre }}
+                {{ pedido.Pedido.Cliente.apellido }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Petición: </strong
+                >{{ pedido.Pedido.fechaPeticion | date: "dd-MM-yyyy" }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Ejecución: </strong
+                >{{ pedido.Pedido.fechaEjecucion | date: "dd-MM-yyyy" }}
+              </p>
+              <a
+                class="btn btn-info btn-block text-white"
+                [routerLink]="['/detalle', pedido.idpedido]"
+                ><i class="fas fa-edit fa-2x mr-1"></i>Detalle</a
+              >
+            </div>
+          </div>
+          <div
+            *ngIf="pedido.Pedido.estado === 'En esper'"
+            class="card text-center mb-4"
+          >
+            <div class="card-header bg-warning text-dark">
+              {{ pedido.Pedido.estado }}
+            </div>
+            <div class="card-body">
+              <p>
+                <strong class="font-weight-bold">Cliente: </strong>
+                {{ pedido.Pedido.Cliente.nombre }}
+                {{ pedido.Pedido.Cliente.apellido }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Petición: </strong
+                >{{ pedido.Pedido.fechaPeticion | date: "dd-MM-yyyy" }}
+              </p>
+              <p>
+                <strong class="font-weight-bold">Fecha de Ejecución: </strong
+                >{{ pedido.Pedido.fechaEjecucion | date: "dd-MM-yyyy" }}
+              </p>
+              <a
+                class="btn btn-info btn-block text-white"
+                [routerLink]="['/detalle', pedido.idpedido]"
+                ><i class="fas fa-edit fa-2x mr-1"></i>Detalle</a
+              >
+            </div>
+          </div>
+        </div>
+      </div></ng-template
+    >
   </div>
 </div>
+<app-footer></app-footer>

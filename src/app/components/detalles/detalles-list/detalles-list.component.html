@@ -1,28 +1,90 @@
 <app-navigation></app-navigation>
-<div class="container p-4">
-  <p>Fecha de Petición: {{ detalles[0].Pedido.fechaPeticion | date }}</p>
-  <p>Estado: {{ detalles[0].Pedido.estado }}</p>
-  <p>Fecha de Ejecución: {{ detalles[0].Pedido.fechaEjecucion | date }}</p>
-  <p>Costo: {{ detalles[0].Pedido.costo | currency }}</p>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let detalle of detalles">
-      <div class="card text-center mb-4">
-        <div
-          class="card-header d-flex bg-dark text-white justify-content-between align-items-center"
-        >
-          {{ detalle.Servicio.nombre }}
+<div class="bg">
+  <section class="confirmation_part p-5">
+    <div class="container">
+      <h1 class="text-center m-4">Pedido</h1>
+      <div class="row">
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>Información del Pedido</h4>
+            <ul>
+              <li>
+                <p>Fecha de Petición</p>
+                <span>{{ detalles[0].Pedido.fechaPeticion | date }}</span>
+              </li>
+              <li>
+                <p>Fecha de Ejecución</p>
+                <span>{{ detalles[0].Pedido.fechaEjecucion | date }}</span>
+              </li>
+              <li>
+                <p>Costo Total</p>
+                <span>{{ detalles[0].Pedido.costo | currency }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="card-body">
-          <p>
-            <strong class="font-weight-bold">Empresa: </strong>
-            {{ detalle.Servicio.Empresa.nombre }}
-          </p>
-          <p>
-            <strong class="font-weight-bold">Descripción: </strong
-            >{{ detalle.Servicio.descripcion }}
-          </p>
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>Información del Cliente</h4>
+            <ul>
+              <li>
+                <p>Cliente</p>
+                <span
+                  >{{ detalles[0].Pedido.Cliente.nombre }}
+                  {{ detalles[0].Pedido.Cliente.apellido }}</span
+                >
+              </li>
+              <li>
+                <p>Teléfono</p>
+                <span>{{ detalles[0].Pedido.Cliente.telefono }}</span>
+              </li>
+              <li>
+                <p>Ciudad</p>
+                <span>{{ detalles[0].Pedido.Cliente.ciudad }}</span>
+              </li>
+              <li>
+                <p>Dirección</p>
+                <span>{{ detalles[0].Pedido.Cliente.direccion }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="order_details_iner">
+            <h3>Detalle del Pedido</h3>
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th scope="col">Servicio</th>
+                  <th scope="col">Empresa</th>
+                  <th scope="col" colspan="2">Descripcion</th>
+                  <th scope="col">Costo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let detalle of detalles">
+                  <th>
+                    <span>{{ detalle.Servicio.nombre }}</span>
+                  </th>
+                  <th>{{ detalle.Servicio.Empresa.nombre }}</th>
+                  <th colspan="2">
+                    <span>{{ detalle.Servicio.descripcion }}</span>
+                  </th>
+                  <th>{{ detalle.costo | currency }}</th>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Total: {{ detalles[0].Pedido.costo | currency }}</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
+<app-footer></app-footer>

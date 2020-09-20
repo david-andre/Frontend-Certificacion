@@ -1,60 +1,65 @@
-<app-navigation></app-navigation>
-<div class="container p-4">
-  <div class="row">
-    <div *ngIf="idempresa">
-      <button
-        class="btn btn-outline-info ml-3 mb-4"
-        [routerLink]="['/servicios/add', idempresa]"
-      >
-        <i class="fas fa-plus-circle mr-1"></i>Agregar Servicio
-      </button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let servicio of servicios">
-      <div class="card text-center mb-4">
-        <div
-          class="card-header d-flex bg-dark text-white justify-content-between align-items-center"
+<app-navigation2 *ngIf="idempresa; else elseBlock"></app-navigation2>
+<ng-template #elseBlock><app-navigation></app-navigation></ng-template>
+<div class="bg">
+  <div class="container p-5">
+    <h1 class="text-center m-4">Servicios</h1>
+    <div class="row">
+      <div *ngIf="idempresa">
+        <button
+          class="btn btn-outline-info ml-3 mb-4"
+          [routerLink]="['/servicios/add', idempresa]"
         >
-          {{ servicio.nombre }}
+          <i class="fas fa-plus-circle mr-1"></i>Agregar Servicio
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let servicio of servicios">
+        <div class="card text-center mb-4">
+          <div
+            class="card-header d-flex bg-dark text-white justify-content-between align-items-center"
+          >
+            {{ servicio.nombre }}
 
-          <div *ngIf="idempresa">
-            <i
-              class="fas fa-trash fa-2x text-danger"
-              (click)="deleteServicio(servicio.idservicio)"
-            ></i>
+            <div *ngIf="idempresa">
+              <i
+                class="fas fa-trash fa-2x text-danger"
+                (click)="deleteServicio(servicio.idservicio)"
+              ></i>
+            </div>
           </div>
-        </div>
-        <div class="card-body">
-          <p *ngIf="!idempresa">
-            <strong class="font-weight-bold">Empresa: </strong>
-            {{ servicio.Empresa.nombre }}
-          </p>
-          <p>
-            <strong class="font-weight-bold">Costo: </strong>
-            {{ servicio.costo | currency }}
-          </p>
-          <p>
-            <strong class="font-weight-bold">Descripción: </strong
-            >{{ servicio.descripcion }}
-          </p>
+          <div class="card-body">
+            <p *ngIf="!idempresa">
+              <strong class="font-weight-bold">Empresa: </strong>
+              {{ servicio.Empresa.nombre }}
+            </p>
+            <p>
+              <strong class="font-weight-bold">Costo: </strong>
+              {{ servicio.costo | currency }}
+            </p>
+            <p>
+              <strong class="font-weight-bold">Descripción: </strong
+              >{{ servicio.descripcion }}
+            </p>
 
-          <div *ngIf="idempresa; else elseBlock">
-            <a
-              class="btn btn-info btn-block text-white"
-              [routerLink]="['/servicios/edit', servicio.idservicio]"
-              ><i class="fas fa-edit fa-2x mr-1"></i>Editar Servicio</a
-            >
+            <div *ngIf="idempresa; else elseBlock">
+              <a
+                class="btn btn-info btn-block text-white"
+                [routerLink]="['/servicios/edit', servicio.idservicio]"
+                ><i class="fas fa-edit fa-2x mr-1"></i>Editar Servicio</a
+              >
+            </div>
+            <ng-template #elseBlock>
+              <a
+                class="btn btn-info btn-block text-white"
+                (click)="addServicio(servicio.idservicio)"
+                ><i class="fas fa-shopping-bag fa-2x mr-2"></i>Pídelo ahora</a
+              >
+            </ng-template>
           </div>
-          <ng-template #elseBlock>
-            <a
-              class="btn btn-info btn-block text-white"
-              (click)="addServicio(servicio.idservicio)"
-              ><i class="fas fa-shopping-bag fa-2x mr-2"></i>Pídelo ahora</a
-            >
-          </ng-template>
         </div>
       </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

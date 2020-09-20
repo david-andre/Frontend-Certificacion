@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from '../../../services/servicios.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,6 +14,7 @@ export class ServiciosListComponent implements OnInit {
   idempresa = this.activatedRoute.snapshot.params.id;
   constructor(
     private serviciosService: ServiciosService,
+    private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -82,8 +83,8 @@ export class ServiciosListComponent implements OnInit {
           },
           (err) => {
             Swal.fire(
-              'Ha ocurrido un error',
-              'No se pudo eliminar el servicio',
+              'No se puede eliminar',
+              'Existen clientes que ya lo han pedido',
               'error'
             );
             console.error(err);
@@ -104,6 +105,7 @@ export class ServiciosListComponent implements OnInit {
       showConfirmButton: false,
       timer: 2000,
     });
+    this.router.navigate(['/pedidos/add']);
   }
 
   getDetalles() {

@@ -1,0 +1,159 @@
+<app-navigation2></app-navigation2>
+<!-- Hero Area Start-->
+<!-- Hero Area End-->
+<div class="bg-dark p-5">
+  <section class="popular-items">
+    <div class="container">
+      <h1 class="text-center text-white">Estadísticas</h1>
+      <div class="row product-btn justify-content-between mb-40">
+        <div class="properties__button">
+          <!--Nav Button  -->
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a
+                class="nav-item nav-link active text-white"
+                id="nav-home-tab"
+                data-toggle="tab"
+                href="#nav-home"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+                >Mis Servicios</a
+              >
+              <a
+                class="nav-item nav-link text-white"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-profile"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+                >Servicios/mes</a
+              >
+              <a
+                class="nav-item nav-link text-white"
+                id="nav-contact-tab"
+                data-toggle="tab"
+                href="#nav-contact"
+                role="tab"
+                aria-controls="nav-contact"
+                aria-selected="false"
+              >
+                Empresas/mes
+              </a>
+              <a
+                class="nav-item nav-link text-white"
+                id="nav-estadistica4-tab"
+                data-toggle="tab"
+                href="#nav-estadistica4"
+                role="tab"
+                aria-controls="nav-estadistica4"
+                aria-selected="false"
+              >
+                Montos/Servicios
+              </a>
+            </div>
+          </nav>
+          <!--End Nav Button  -->
+        </div>
+      </div>
+      <!-- Nav Card -->
+      <div class="tab-content" id="nav-tabContent">
+        <!-- card one -->
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div style="width: 100%">
+                <canvas
+                  baseChart
+                  [chartType]="'bar'"
+                  [datasets]="chartData"
+                  [labels]="chartLabels"
+                  [options]="chartOptions"
+                  [legend]="true"
+                >
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card two -->
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div style="width: 100%">
+                <canvas
+                  baseChart
+                  [chartType]="'bar'"
+                  [datasets]="chartData2"
+                  [labels]="chartLabels2"
+                  [options]="chartOptions"
+                  [legend]="true"
+                >
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card three -->
+        <div
+          class="tab-pane fade"
+          id="nav-contact"
+          role="tabpanel"
+          aria-labelledby="nav-contact-tab"
+        >
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div style="width: 100%">
+                <canvas
+                  baseChart
+                  [chartType]="'bar'"
+                  [datasets]="chartData3"
+                  [labels]="chartLabels2"
+                  [options]="chartOptions"
+                  [legend]="true"
+                >
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card four -->
+        <div
+          class="tab-pane fade"
+          id="nav-estadistica4"
+          role="tabpanel"
+          aria-labelledby="nav-estadistica4-tab"
+        >
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div style="width: 100%">
+                <canvas
+                  baseChart
+                  [chartType]="'doughnut'"
+                  [datasets]="chartData4"
+                  [labels]="chartLabels4"
+                  [options]="chartOptions"
+                  [legend]="true"
+                >
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Nav Card -->
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

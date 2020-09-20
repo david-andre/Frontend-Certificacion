@@ -16,8 +16,13 @@ export class EmpresasFormComponent implements OnInit {
     telefono: '',
     ciudad: '',
     direccion: '',
+    idusuario: 0,
   };
 
+  loggedCliente: any = {
+    token: '',
+    user: 0,
+  };
   edit: boolean = false;
 
   constructor(
@@ -27,6 +32,9 @@ export class EmpresasFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    var usuario = localStorage.getItem('valid');
+    this.loggedCliente = JSON.parse(usuario);
+    this.empresa.idusuario = this.loggedCliente.user;
     const params = this.activatedRoute.snapshot.params;
     console.log(params);
     if (params.id) {

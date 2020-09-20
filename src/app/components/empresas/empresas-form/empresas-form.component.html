@@ -1,96 +1,95 @@
-<div style="height: 100vh">
-  <app-navigation></app-navigation>
-  <div class="bg" style="height: 82vh">
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-4 offset-md-2">
-          <div class="card">
-            <div class="card-body">
-              <form>
-                <div class="form-group input-group-icon">
-                  <div class="icon">
-                    <i class="fas fa-id-badge" aria-hidden="true"></i>
-                  </div>
-                  <input
-                    [(ngModel)]="empresa.nombre"
-                    name="nombre"
-                    type="text"
-                    class="single-input"
-                    placeholder="Nombre"
-                    autofocus
-                    autocomplete="off"
-                  />
+<app-navigation2></app-navigation2>
+<div class="bg">
+  <div class="container p-5">
+    <div class="row">
+      <div class="col-md-4 offset-md-2">
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="form-group input-group-icon">
+                <div class="icon">
+                  <i class="fas fa-id-badge" aria-hidden="true"></i>
                 </div>
-                <div class="form-group input-group-icon">
-                  <div class="icon">
-                    <i class="fas fa-phone" aria-hidden="true"></i>
-                  </div>
-                  <input
-                    [(ngModel)]="empresa.telefono"
-                    name="telefono"
-                    type="text"
-                    class="single-input"
-                    placeholder="Teléfono"
-                    autocomplete="off"
-                  />
+                <input
+                  [(ngModel)]="empresa.nombre"
+                  name="nombre"
+                  type="text"
+                  class="single-input"
+                  placeholder="Nombre"
+                  autofocus
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-group input-group-icon">
+                <div class="icon">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
                 </div>
-                <div class="form-group input-group-icon">
-                  <div class="icon">
-                    <i class="fas fa-city" aria-hidden="true"></i>
-                  </div>
-                  <input
-                    [(ngModel)]="empresa.ciudad"
-                    name="ciudad"
-                    type="text"
-                    class="single-input"
-                    placeholder="Ciudad"
-                    autocomplete="off"
-                  />
+                <input
+                  [(ngModel)]="empresa.telefono"
+                  name="telefono"
+                  type="text"
+                  class="single-input"
+                  placeholder="Teléfono"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-group input-group-icon">
+                <div class="icon">
+                  <i class="fas fa-city" aria-hidden="true"></i>
                 </div>
-                <div class="form-group input-group-icon">
-                  <div class="icon">
-                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
-                  </div>
-                  <input
-                    [(ngModel)]="empresa.direccion"
-                    name="direccion"
-                    type="text"
-                    class="single-input"
-                    placeholder="Dirección"
-                    autocomplete="off"
-                  />
+                <input
+                  [(ngModel)]="empresa.ciudad"
+                  name="ciudad"
+                  type="text"
+                  class="single-input"
+                  placeholder="Ciudad"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-group input-group-icon">
+                <div class="icon">
+                  <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                 </div>
-                <button
-                  class="btn btn-danger btn-block"
-                  (click)="edit ? updateEmpresa() : saveNewEmpresa()"
-                >
-                  Guardar
-                </button>
-              </form>
-            </div>
+                <input
+                  [(ngModel)]="empresa.direccion"
+                  name="direccion"
+                  type="text"
+                  class="single-input"
+                  placeholder="Dirección"
+                  autocomplete="off"
+                />
+              </div>
+              <button
+                class="btn btn-danger btn-block"
+                (click)="edit ? updateEmpresa() : saveNewEmpresa()"
+              >
+                Guardar
+              </button>
+            </form>
           </div>
         </div>
+      </div>
 
-        <div class="col-md-4">
-          <div class="card border-danger text-center">
-            <div class="card-header"><h4>Empresa</h4></div>
-            <div class="card card-body text-center">
-              <i class="fas fa-store-alt fa-8x mb-3"></i>
-              <label>Nombre</label>
-              <label class="font-weight-bold">{{ empresa.nombre }}</label>
-              <label
-                >Teléfono: <b>{{ empresa.telefono }}</b></label
-              >
-              <label
-                >Ciudad: <b>{{ empresa.ciudad }}</b></label
-              >
-              <label
-                >Dirección: <b>{{ empresa.direccion }}</b></label
-              >
-            </div>
+      <div class="col-md-4">
+        <div class="card text-center single_confirmation_details">
+          <div class="card-header"><h4>Mi Empresa</h4></div>
+          <div class="card-body text-center">
+            <i class="fas fa-store-alt fa-8x mb-3"></i>
+            <p>Nombre</p>
+            <label class="font-weight-bold">{{ empresa.nombre }}</label>
+            <p
+              >Teléfono: <b>{{ empresa.telefono }}</b></p
+            >
+            <p
+              >Ciudad: <b>{{ empresa.ciudad }}</b></p
+            >
+            <p
+              >Dirección: <b>{{ empresa.direccion }}</b></p
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

@@ -1,23 +1,24 @@
 <app-navigation></app-navigation>
-<div class="container p-4">
-  <form>
-    <label>Fecha de Petición: {{ pedido.fechaPeticion }}</label>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Cliente</label>
-      <div class="col-3">
-        <select
-          class="custom-select"
-          [(ngModel)]="pedido.idcliente"
-          name="cliente"
-        >
-          <option *ngFor="let cliente of clientes" [value]="cliente.idcliente"
-            >{{ cliente.nombre }} {{ cliente.apellido }}</option
-          >
-        </select>
-      </div>
+<div class="container p-5">
+  <h1 class="text-center">Nuevo Pedido</h1>
+  <form class="card p-5">
+    <div class="text-right">
+      <i
+        class="fas fa-sync-alt fa-2x"
+        style="cursor: pointer"
+        (click)="deleteDetalles()"
+      ></i>
     </div>
+    <label>
+      <b class="mr-3"> Fecha de Petición: </b> {{ pedido.fechaPeticion }}</label
+    >
+    <br />
+    <label>
+      <b class="mr-3">Cliente: </b> {{ cliente.nombre }}
+      {{ cliente.apellido }}</label
+    >
     <div class="form-group row">
-      <label class="col-2 col-form-label">Fecha de Ejecución:</label>
+      <label class="col-2 col-form-label"> <b> Fecha de Ejecución: </b></label>
       <div class="col-3">
         <input
           type="date"
@@ -48,8 +49,7 @@
     </table>
     <label>Costo Total: {{ pedido.costo | currency }}</label>
     <hr />
-    <button class="btn btn-success" (click)="saveNewPedido()">
-      Guardar
-    </button>
+    <button class="btn btn-success" (click)="saveNewPedido()">Pedir</button>
   </form>
 </div>
+<app-footer></app-footer>

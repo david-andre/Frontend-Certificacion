@@ -14,7 +14,7 @@
             <!-- Main-menu -->
             <div class="main-menu d-none d-lg-block">
               <nav>
-                <ul id="navigation">
+                <ul id="navigation" *ngIf="show; else elseBlock">
                   <li class="hot">
                     <a
                       class="nav-link"
@@ -25,6 +25,34 @@
                     >
                   </li>
                 </ul>
+                <ng-template #elseBlock
+                  ><ul id="navigation">
+                    <li>
+                      <a
+                        ><i class="fas fa-user-circle mr-1"></i
+                        >{{ loggedUsuario.usuario
+                        }}<i class="fas fa-ellipsis-v ml-3"></i
+                      ></a>
+                      <ul class="submenu">
+                        <li>
+                          <a
+                            class="nav-link"
+                            routerLink="/profile"
+                            routerLinkActive="active"
+                            ><i class="far fa-user-circle mr-2"></i
+                            ><label>Mi perfil</label></a
+                          >
+                        </li>
+                        <li>
+                          <a href="index.html" (click)="logOut()"
+                            ><i class="fas fa-door-open mr-1"></i
+                            ><label>Cerrar Sesión</label></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul></ng-template
+                >
               </nav>
             </div>
           </div>
@@ -41,18 +69,18 @@
   <main>
     <!-- Hero Area End-->
     <!--================login_part Area =================-->
-    <section class="login_part p-5">
+    <section *ngIf="login" class="login_part p-5">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6">
             <div class="login_part_text text-center">
               <div class="login_part_text_iner">
-                <h2>New to our Shop?</h2>
+                <h2>¿No tienes una cuenta?</h2>
                 <p>
-                  There are advances being made in science and technology
-                  everyday, and a good example of this is the
+                  Se parte de nuestra comunidad y aprovecha de todos nuestros
+                  servicios
                 </p>
-                <a href="#" class="btn_3">Create an Account</a>
+                <a (click)="Toggle()" class="btn_3">Crear una cuenta</a>
               </div>
             </div>
           </div>
@@ -60,8 +88,8 @@
             <div class="login_part_form">
               <div class="login_part_form_iner">
                 <h3>
-                  Welcome Back ! <br />
-                  Please Sign in now
+                  Bienvenido! <br />
+                  Iniciar Sesión
                 </h3>
                 <form
                   class="row contact_form"
@@ -73,10 +101,9 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="name"
-                      name="name"
-                      value=""
-                      placeholder="Username"
+                      [(ngModel)]="logInUser.usuario"
+                      name="usuario"
+                      placeholder="Usuario"
                     />
                   </div>
                   <div class="col-md-12 form-group p_star">
@@ -84,20 +111,83 @@
                       type="password"
                       class="form-control"
                       id="password"
-                      name="password"
-                      value=""
-                      placeholder="Password"
+                      [(ngModel)]="logInUser.contrasena"
+                      name="constrasena"
+                      placeholder="Contraseña"
                     />
                   </div>
                   <div class="col-md-12 form-group">
-                    <div class="creat_account d-flex align-items-center">
-                      <input type="checkbox" id="f-option" name="selector" />
-                      <label for="f-option">Remember me</label>
-                    </div>
-                    <button (click)="Toast()" class="btn_3">
-                      log in
+                    <button (click)="logIn()" class="btn_3">
+                      Iniciar Sesión
                     </button>
-                    <a class="lost_pass" href="#">forget password?</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section *ngIf="!login" class="login_part p-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6">
+            <div class="login_part_text text-center">
+              <div class="login_part_text_iner">
+                <h2>¿Ya tienes una cuenta?</h2>
+                <p>
+                  Una vez que hayas creado tu cuenta, puedes iniciar sesión con
+                  tus datos ya registrados.
+                </p>
+                <a (click)="Toggle()" class="btn_3">Iniciar Sesión</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="login_part_form">
+              <div class="login_part_form_iner">
+                <h3>
+                  Crear una Cuenta <br />
+                  Completa todos los campos
+                </h3>
+                <form
+                  class="row contact_form"
+                  action="#"
+                  method="post"
+                  novalidate="novalidate"
+                >
+                  <div class="col-md-12 form-group p_star">
+                    <input
+                      [(ngModel)]="usuario.usuario"
+                      type="text"
+                      class="form-control"
+                      name="usuario"
+                      placeholder="Usuario"
+                    />
+                  </div>
+                  <div class="col-md-12 form-group p_star">
+                    <input
+                      [(ngModel)]="usuario.email"
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="Correo Electrónico"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="col-md-12 form-group p_star">
+                    <input
+                      [(ngModel)]="usuario.contrasena"
+                      type="password"
+                      class="form-control"
+                      name="contrasena"
+                      placeholder="Contraseña"
+                    />
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <button (click)="saveNewUsuario()" class="btn_3">
+                      Regístrate
+                    </button>
                   </div>
                 </form>
               </div>
@@ -108,4 +198,5 @@
     </section>
     <!--================login_part end =================-->
   </main>
+  <app-footer></app-footer>
 </body>
